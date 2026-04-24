@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ensaglow</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <!-- link css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="beauty-spinner"></div>
+  <div class="loading-text">Memuat <span>Ensaglow</span>...</div>
+</div>
+
+<!-- ScrollSpy -->
+ <main data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="50" tabindex="0">
+
+
+<!-- Hero Section -->
+<section class="Hero" id="beranda">
+
+<!-- Navbar -->
+<nav id="navbar-example" class="navbar navbar-expand-lg  m-2 m-md-3 m-lg-3 ms-2 ms-md-3 ms-lg-5 me-2 me-md-3 me-lg-5 p-2 rounded-5 shadow fixed-top">
+  <div class="container">
+    <a class="navbar-brand me-0 me-md-3 me-lg-5 d-flex align-items-center text-white fs-4 fw-medium" href="#">
+    <img src="img/logo.png" alt="logo-cario" style="width: 50px;"/>
+    </a>
+    
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse ms-0 ms-md-3 ms-lg-5" id="navbarNav">
+      <ul class="navbar-nav  mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#beranda">Beranda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#produk">Produk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#tentang">Tentang Kami</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#testimoni">Testimoni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#faq">FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#kontak">Kontak</a>
+        </li>
+      </ul>
+      <!-- <button onclick="toggleTheme()"><i id="modeIcon" class="fas fa-sun"></i></button> -->
+      <!-- Tombol Login & Register -->
+      <div class="d-flex mb-2 mt-2">
+        <a href="Auth/login.html" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Masuk</a>
+        <a href="Auth/register.html" class="btn btn-light text-dark" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- End Navbar -->
+
+</section>
+
+<!-- Modal Login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden" style="min-height: 500px;">
+
+      <div class="d-flex flex-column flex-md-row h-100">
+
+        <!-- Gambar Kiri -->
+        <div class="d-none d-md-flex align-items-center justify-content-center col-md-6 bg-white p-3">
+          <img src="https://i.ibb.co/yc2gZh5r/login.png" alt="Login Image"
+            class="img-fluid w-100 h-100" style="object-fit: contain;">
+        </div>
+
+        <!-- Form Kanan -->
+        <div class="col-12 col-md-6 p-4 d-flex flex-column justify-content-center">
+          <div class="modal-header text-white rounded-3 mb-3 p-3"  style="background: linear-gradient(135deg, #5c3a00, #8b5e0b);">
+            <h5 class="modal-title d-flex align-items-center gap-2 " id="loginModalLabel">
+              <i class="bi bi-box-arrow-in-right"></i> Masuk
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="mb-3 text-center text-muted small">
+            <h5>Selamat datang kembali! Silakan masuk untuk melanjutkan.</h5>
+          </div>
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label text-secondary">
+                <i class="bi bi-envelope"></i> Email
+              </label>
+              <input type="email" class="form-control rounded-pill px-3" id="email" required>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label text-secondary">
+                <i class="bi bi-lock"></i> Kata Sandi
+              </label>
+              <input type="password" class="form-control rounded-pill px-3" id="password" required>
+            </div>
+            <button type="submit" class="btn text-white  w-100 fw-semibold"  style="background: linear-gradient(135deg, #5c3a00, #8b5e0b); border: none;">
+              <i class="bi bi-box-arrow-in-right"></i> Masuk
+            </button>
+
+            <!-- Divider ke pendaftaran -->
+            <div class="text-center mt-4">
+              <span class="text-muted">Belum punya akun?</span><br>
+              <a href="#" class="text-decoration-none fst-italic text-primary" data-bs-toggle="modal" data-bs-target="#registerModal">Daftar sekarang</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Daftar -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+
+      <div class="d-flex flex-column flex-md-row">
+
+        <!-- Gambar Kiri (Full Height) -->
+        <div class="d-none d-md-block col-md-6 bg-light">
+          <img src="https://i.ibb.co/RpckdpmT/regis.png" alt="Register Image"
+             class="img-fluid w-100 h-100" style="object-fit: contain;">
+        </div>
+
+        <!-- Form Kanan -->
+        <div class="col-12 col-md-6 p-4">
+          <div class="modal-header text-white rounded-3 mb-3" style="background: linear-gradient(135deg, #b68d40, #8b6f34);">
+            <h5 class="modal-title d-flex align-items-center gap-2" id="registerModalLabel">
+              <i class="bi bi-person-plus"></i> Daftar
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <form>
+            <div class="mb-3">
+              <label for="registerEmail" class="form-label text-secondary">
+                <i class="bi bi-envelope"></i> Email
+              </label>
+              <input type="email" class="form-control rounded-pill px-3" id="registerEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="registerPassword" class="form-label text-secondary">
+                <i class="bi bi-lock"></i> Kata Sandi
+              </label>
+              <input type="password" class="form-control rounded-pill px-3" id="registerPassword" required>
+            </div>
+            <div class="mb-4">
+              <label for="registerConfirmPassword" class="form-label text-secondary">
+                <i class="bi bi-lock-fill"></i> Konfirmasi Kata Sandi
+              </label>
+              <input type="password" class="form-control rounded-pill px-3" id="registerConfirmPassword" required>
+            </div>
+            <button type="submit" class="btn text-white w-100 rounded-pill fw-semibold" style="background: linear-gradient(135deg, #b68d40, #8b6f34); border: none;">
+              <i class="bi bi-person-plus"></i> Daftar
+            </button>
+            
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Produk Section -->
+<section class="m-2 m-md-3 m-lg-3 ms-2 ms-md-3 ms-lg-4 me-2 me-md-3 me-lg-4 mb-2 mb-md-3 mb-lg-5 p-5" id="produk">
+  <h2 class="display-5 fw-bold mb-2 text-center" style="color:#4B3F72;">Produk Ensaglow</h2>                   
+  <div class="mx-auto mb-4 border border-4 border-dark w-25  rounded-5"></div>
+  <div class="row g-4 justify-content-center">
+    <!-- Produk 1 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow rounded-4 h-100">
+        <div class="overflow-hidden">
+          <img src="img/HB WHITENING PERFECT.jpg" class="card-img-top rounded-top-4 produk-img-hover" alt="Skin Enhancing Gel">
+        </div>
+        <div class="card-body d-flex flex-column">
+          <p class="fw-bold mb-2 fs-3" style="color: #d6b72a">Rp150.000</p>
+          <h5 class="card-title fw-bold" style="color: #333333;">PAKET USAHA HB WHITENING PERFECT DOSTING ENSAGLOW</h5>
+          <p class="card-text mb-3" style="color: #777777;">Memutihkan tubuh tanpa suntik putih, tanpa infus maupun obat</p>
+          <div class="mt-auto d-flex gap-2">
+            <a href="https://shopee.co.id/PAKET-USAHA-HB-WHITENING-PERFECT-DOSTING-ENSAGLOW-i.959750570.26157031323" 
+              target="_blank" 
+              class="btn flex-fill" 
+              style="background-color: #6C63FF; color: #fff; border: none;">
+              <i class="bi bi-cart-plus me-2"></i>Beli
+            </a>
+            <button class="btn flex-fill btn-detail" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#detailProduk1" 
+                    style="border: 1px solid #6C63FF; color: #6C63FF; background-color: transparent;">
+              <i class="bi bi-info-circle me-2"></i>Detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Produk 2 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow rounded-4 h-100">
+        <div class="overflow-hidden">
+          <img src="img/HB WHITENING PLATINUM.jpg" class="card-img-top rounded-top-4 produk-img-hover" alt="Diamond Luxury Night Cream">
+        </div>
+        <div class="card-body d-flex flex-column">
+          <p class="fw-bold mb-2 fs-3" style="color: #d6b72a">Rp150.000</p>
+          <h5 class="card-title fw-bold" style="color: #333333;">PAKET USAHA HB WHITENING PLATINUM ENSAGLOW</h5>
+          <p class="card-text mb-3" style="color: #777777;">Direkomendasikan untuk kulit yang tidak cenderung gelap. </p>
+          <div class="mt-auto d-flex gap-2">
+            <a href="https://shopee.co.id/PAKET-USAHA-HB-WHITENING-PLATINUM-ENSAGLOW-i.959750570.27457028380" class="btn flex-fill" style="background-color: #6C63FF; color: #fff; border: none;">
+              <i class="bi bi-cart-plus me-2"></i>Beli
+            </a>
+            <button class="btn flex-fill btn-detail" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#detailProduk2" 
+                    style="border: 1px solid #6C63FF; color: #6C63FF; background-color: transparent;">
+              <i class="bi bi-info-circle me-2"></i>Detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Produk 3 -->
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow rounded-4 h-100">
+        <div class="overflow-hidden">
+          <img src="img/WHITENING SKINCARE.jpg" class="card-img-top rounded-top-4 produk-img-hover" alt="Golden Skin DNA Salmon Serum">
+        </div>
+        <div class="card-body d-flex flex-column">
+          <p class="fw-bold mb-2 fs-3" style="color: #d6b72a">Rp50.000 - Rp250.000</p>
+          <h5 class="card-title fw-bold" style="color: #333333;">SKINCARE PEMUTIH WAJAH AMPUH BPOM</h5>
+          <p class="card-text mb-3" style="color: #777777;">Mengandung formula terbaik sehingga mampu memutihkan wajah dalam waktu yang relatif singkat.</p>
+          <div class="mt-auto d-flex gap-2">
+            <a href="https://shopee.co.id/SKINCARE-PEMUTIH-WAJAH-AMPUH-BPOM-i.959750570.24076809506" target="_blank" class="btn flex-fill" style="background-color: #6C63FF; color: #fff; border: none;">
+              <i class="bi bi-cart-plus me-2"></i>Beli
+            </a>
+            <button class="btn flex-fill btn-detail" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#detailProduk3" 
+                    style="border: 1px solid #6C63FF; color: #6C63FF; background-color: transparent;">
+              <i class="bi bi-info-circle me-2"></i>Detail
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal Detail Produk 1 -->
+<div class="modal fade" id="detailProduk1" tabindex="-1" aria-labelledby="detailProduk1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header" style="background-color: #3F72AF;">
+        <h5 class="modal-title text-white" id="detailProduk1Label">HB WHITENING PERFECT ENSAGLOW</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/HB WHITENING PERFECT.jpg" class="img-fluid rounded mb-3" alt="Skin Enhancing Gel">
+        <p>
+          <strong>HB WHITENING PERFECT ENSAGLOW</strong><br>
+          <span class="text-muted">NA18230116021</span>
+        </p>
+        <ul>
+          <li>🌺 Memutihkan tubuh tanpa suntik putih, tanpa infus maupun obat</li>
+          <li>🌺 Membantu memudarkan bekas luka, bekas cacar ataupun flek tubuh lainnya</li>
+          <li>🌺 Membuat kulit cerah dalam waktu yang relatif singkat</li>
+          <li>🌺 Meratakan warna kulit yang belang</li>
+          <li>🌺 Membuat kulit halus</li>
+          <li>🌺 Membuat kulit bening</li>
+          <li>🌺 Membuat kulit putih seperti perawatan mahal</li>
+        </ul>
+        <p>
+          <strong>Catatan:</strong><br>
+          - Siang hari wajib menggunakan HB Luxury/Platinum/Luminous/sunblock merk apapun
+        </p>
+        <p>
+          <strong>Cara Pakai:</strong><br>
+          Hanya dipakai di malam hari, oleskan tipis-tipis ke bagian tubuh yang ingin terlihat putih (jangan terlalu banyak karena dapat menyebabkan iritasi). Untuk hasil maksimal, gunakan 5–10 menit sebelum tidur. <strong>Hindari pemakaian area wajah.</strong>
+        </p>
+        <ul class="mb-0">
+          <li>👉🏻 <strong>Tidak untuk bumil, busui, dan kulit sensitif</strong></li>
+          <li>👉🏻 <strong>Tidak untuk area lipatan</strong></li>
+          <li>👉🏻 <strong>Tidak boleh dipakai di area sensitif dan kulit yang cenderung tipis</strong></li>
+          <li>👉🏻 <strong>Tidak untuk kulit yang memiliki stretchmark</strong></li>
+          <li>👉🏻 <strong>Tidak untuk jangka panjang, jika sudah putih wajib pindah ke dosis di bawahnya yang aman untuk jangka panjang</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Detail Produk 2 -->
+<div class="modal fade" id="detailProduk2" tabindex="-1" aria-labelledby="detailProduk2Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header" style="background-color: #3F72AF;">
+        <h5 class="modal-title text-white" id="detailProduk2Label">WHITENING PLATINUM ENSAGLOW</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/HB WHITENING PLATINUM.jpg" class="img-fluid rounded mb-3" alt="Diamond Luxury Night Cream">
+        <p>
+          <strong>WHITENING PLATINUM ENSAGLOW</strong><br>
+          <span class="text-muted">250GR</span>
+        </p>
+        <p>
+          Direkomendasikan untuk kulit yang tidak cenderung gelap (karena ada efek instant whitenya, jadi tidak cocok untuk kulit warna gelap). Sangat cocok untuk HB siang dan sebagai lanjutan setelah pemakaian HB dosting.
+        </p>
+        <p>
+          <strong>Bonus:</strong> Dapat membantu menyamarkan stretchmark dan bekas luka yang membandel.
+        </p>
+        <p>
+          <strong>BPOM:</strong> NA18230105803
+        </p>
+        <ul>
+          <li>Mengandung dosis yang relatif tinggi sehingga mampu memutihkan tubuh dalam waktu yang relatif singkat <strong>tanpa pengelupasan</strong></li>
+          <li>Hasil bisa dilihat dari 7–14 hari pemakaian rutin</li>
+          <li>Sudah mengandung SPF (tidak perlu pakai sunblock secara terpisah)</li>
+          <li>Bisa untuk kulit sensitif</li>
+          <li>Bisa untuk bumil dan busui</li>
+          <li>Bisa diaplikasikan ke seluruh tubuh termasuk lipatan</li>
+          <li>Aman untuk jangka panjang</li>
+          <li>Cocok untuk semua jenis kulit (pria/wanita)</li>
+          <li>Bisa untuk lotion siang maupun malam (jika tidak punya lotion malam)</li>
+        </ul>
+        <p><strong>Manfaat:</strong></p>
+        <ul>
+          <li>🌺 Memutihkan tubuh tanpa suntik putih, tanpa infus maupun obat (bisa dipakai seluruh tubuh termasuk lipatan)</li>
+          <li>🌺 Membantu memudarkan perlahan bekas luka, bekas cacar, ataupun flek tubuh lainnya</li>
+          <li>🌺 Membuat kulit putih, bersih, berseri dalam waktu yang relatif singkat</li>
+          <li>🌺 Meratakan kulit belang</li>
+          <li>🌺 Membuat kulit wangi sepanjang hari</li>
+          <li>🌺 Membuat kulit kenyal, lembab, dan fresh</li>
+          <li>🌺 Membuat kulit tampak sehat seperti perawatan mahal</li>
+        </ul>
+        <p>
+          <strong>Cara Pakai:</strong><br>
+          Gunakan lotion secara rutin setiap hari, oleskan ke bagian tubuh yang ingin terlihat putih (bisa untuk seluruh tubuh). Gunakan minimal 3x sehari (bisa lebih). Semakin rutin, hasil akan semakin bagus.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Detail Produk 3 -->
+<div class="modal fade" id="detailProduk3" tabindex="-1" aria-labelledby="detailProduk3Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4">
+      <div class="modal-header" style="background-color: #3F72AF;">
+        <h5 class="modal-title text-white" id="detailProduk3Label">WHITENING SKINCARE ENSAGLOW</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/WHITENING SKINCARE.jpg" class="img-fluid rounded mb-3" alt="Golden Skin DNA Salmon Serum">
+        <p>
+          <strong>WHITENING SKINCARE ENSAGLOW</strong>
+        </p>
+        <ul></ul>
+          <li>Whitening Day Cream 10gr</li>
+          <li>White &amp; Glow Night Cream 10gr</li>
+          <li>Facial Foam Centella Extract 100ml</li>
+          <li>Hydrating Face Toner 60ml</li>
+          <li>Whitening Serum with DNA Gold</li>
+          <li>Free pouch cantik</li>
+        </ul>
+        <ul>
+          <li>Mengandung formula terbaik sehingga mampu memutihkan wajah dalam waktu yang relatif singkat <strong>tanpa pengelupasan</strong></li>
+          <li>Hasil bisa dilihat dari 7–14 hari pemakaian rutin</li>
+          <li>Sudah mengandung SPF (tidak perlu pakai sunblock secara terpisah)</li>
+          <li>Bisa untuk kulit sensitif, berjerawat, flek, dan bruntusan</li>
+          <li>Bisa untuk bumil dan busui</li>
+          <li>Aman untuk jangka panjang</li>
+          <li>Cocok untuk semua jenis kulit (pria/wanita)</li>
+        </ul>
+        <p><strong>Manfaat:</strong></p>
+        <ul>
+          <li>🌺 Memutihkan wajah dalam waktu yang relatif singkat</li>
+          <li>🌺 Membantu memutihkan wajah, menghilangkan jerawat, memudarkan bekas jerawat, bekas cacar, dan flek lainnya</li>
+          <li>🌺 Membuat kulit putih, bersih, berseri</li>
+          <li>🌺 Meratakan kulit belang</li>
+          <li>🌺 Membuat kulit glowing sepanjang hari</li>
+          <li>🌺 Membuat kulit kenyal, lembab, dan fresh</li>
+          <li>🌺 Membuat kulit tampak sehat seperti perawatan mahal</li>
+        </ul>
+        <p><strong>Cara Pakai:</strong></p>
+        <ul>
+          <li>Pertama kali pakai, usahakan digunakan di malam hari 10–15 menit sebelum tidur.</li>
+          <li><strong>Malam hari:</strong> Facial Wash &rarr; Toner &rarr; Serum &rarr; Night Cream</li>
+          <li><strong>Siang hari:</strong> Facial Wash &rarr; Toner &rarr; Day Cream</li>
+        </ul>
+        <p><strong>Catatan:</strong></p>
+        <ul>
+          <li>Pemakaian rutin untuk hasil yang maksimal</li>
+          <li>Serum dipakai di malam hari saja</li>
+          <li>Toner ditunggu setengah kering dulu baru dilanjut pemakaian selanjutnya</li>
+          <li>Untuk kulit normal, kering, sensitif</li>
+          <li>BPOM: 1122334455</li>
+          <li>Isi: 20ml</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kenapa Harus Memilih Ensaglow Section -->
+<section class="m-2 m-md-3 m-lg-3 ms-2 ms-md-3 ms-lg-4 me-2 me-md-3 me-lg-4 mb-2 mb-md-3 mb-lg-5 p-5 rounded-5 shadow-lg" id="kenapa-ensaglow" style="background-color: #3F72AF;">
+  <div class="row align-items-center g-4 g-lg-5">
+    <!-- Image Column -->
+    <div class="col-lg-6 d-flex justify-content-center">
+      <img src="https://i.ibb.co/6cRQ6Dj5/kenapa.png" alt="Ilustrasi Perawatan Kulit" class="img-fluid w-100">
+    </div>
+    
+    <!-- Content Column -->
+    <div class="col-lg-6">
+      <div class="ps-lg-4">
+        <h2 class="display-4 fw-bold text-white mb-2 text-center text-lg-start">Kenapa Memilih Ensaglow?</h2>
+        <div class="mb-4 border border-4 border-white w-75 rounded-5"></div>
+        
+        <!-- Feature 1 -->
+        <div class="d-flex align-items-start mb-4 p-3 bg-white bg-opacity-10 rounded-4">
+          <div class="me-3 text-white">
+            <i class="bi bi-truck fs-2"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold text-white">Produk Terdaftar BPOM RI</h4>
+            <p class="mb-0 text-light">
+              Ensaglow menawarkan berbagai produk skincare premium yang **sudah terdaftar secara resmi di BPOM RI** dengan nomor registrasi, seperti:
+              Skin Enhancing Gel, Diamond Luxury Night Cream, Golden Skin DNA Salmon Serum  
+              <!-- (Masukkan daftar produk dan nomor BPOM jika tersedia) -->
+            </p>
+          </div>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="d-flex align-items-start mb-4 p-3 bg-white bg-opacity-10 rounded-4">
+          <div class="me-3 text-white">
+            <i class="bi bi-award fs-2"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold text-white">Terpercaya & Profesional</h4>
+            <p class="mb-0 text-light">Didukung oleh dokter dan beauty therapist ahli, serta klinik yang telah membantu ribuan pelanggan mendapatkan kulit cerah & sehat :contentReference[oaicite:2]{index=2}.</p>
+          </div>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="d-flex align-items-start mb-4 p-3 bg-white bg-opacity-10 rounded-4">
+          <div class="me-3 text-white">
+            <i class="bi bi-box-seam fs-2"></i>
+          </div>
+          <div>
+            <h4 class="fw-bold text-white">Skincare dengan Formulasi Premium</h4>
+            <p class="mb-0 text-light">Menawarkan produk unggulan seperti Skin Enhancing Gel, Diamond Luxury Night Cream, Golden Skin DNA Salmon Serum dan banyak lagi dari rangkaian premium Ensaglow :contentReference[oaicite:3]{index=3}.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Tentang Kami Section -->
+<section class="container" id="tentang">
+  <div class="m-3 p-4 p-md-5 rounded-5 shadow-lg bg-white bg-opacity-100">
+    <div class="text-center text-lg-start">
+      <h1 class="display-5 fw-bold mb-3 text-center" style="color: #3F72AF;">
+        Tentang Kami
+      </h1>
+      <div class="mx-auto mb-4 border border-4 border-dark w-25 rounded-5"></div>
+      
+      <p class="fs-5 mb-4" style="text-align: justify;">
+        <span class="fw-bold" style="color: #3F72AF;">Ensaglow</span> adalah toko skincare kecantikan yang berkomitmen menghadirkan produk berkualitas, aman, dan terdaftar BPOM untuk membantu Anda mendapatkan kulit sehat dan bercahaya.
+      </p>
+      
+      <p class="fs-5 mb-4" style="text-align: justify;">
+        Kami percaya setiap orang berhak tampil percaya diri dengan perawatan terbaik. Ensaglow menghadirkan inovasi produk yang diformulasikan dari bahan-bahan alami pilihan, tanpa mercury dan paraben, serta telah teruji secara klinis.
+      </p>
+      
+      <div class="bg-white bg-opacity-75 rounded-4 p-3 mb-4 shadow-sm">
+        <ul class="list-unstyled mb-0">
+          <li class="mb-3 d-flex align-items-start">
+            <i class="bi bi-patch-check-fill text-primary fs-4 me-3"></i>
+            <span class="fs-5">Produk resmi terdaftar <strong>BPOM RI</strong> & aman untuk semua jenis kulit</span>
+          </li>
+          <li class="mb-3 d-flex align-items-start">
+            <i class="bi bi-heart-fill text-danger fs-4 me-3"></i>
+            <span class="fs-5">Mengutamakan <strong>kesehatan & kecantikan alami</strong> tanpa efek samping</span>
+          </li>
+          <li class="mb-2 d-flex align-items-start">
+            <i class="bi bi-gem text-warning fs-4 me-3"></i>
+            <span class="fs-5">Rangkaian <strong>produk premium</strong> untuk hasil maksimal</span>
+          </li>
+        </ul>
+      </div>
+      
+      <p class="fs-5 mb-4" style="text-align: justify;">
+        Ensaglow telah dipercaya oleh ribuan pelanggan di seluruh Indonesia. Kami selalu berinovasi untuk menghadirkan solusi kecantikan yang efektif, praktis, dan terjangkau. Jadikan Ensaglow sahabat perawatan kulit Anda setiap hari!
+      </p>
+      
+      <div class="text-center text-lg-start">
+        <a href="#produk" class="btn mt-2 px-4 py-3 rounded-pill shadow fw-semibold d-inline-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #3F72AF, #112D4E); font-size: 1.1rem;">
+          <i class="bi bi-bag-heart-fill fs-4 me-3 text-white"></i>
+          <span class="text-white">Temukan Semua Produk Ensaglow</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- paralax -->
+<div class="parallax m-2 rounded-4">
+  <!-- Halaman FEEDBACK -->
+<section id="testimoni" class="py-5 " data-aos="fade-left" data-aos-duration="700" data-aos-easing="ease-in-out">
+  <div class="container-fluid">
+    <div class="text-center mb-4">
+      <h1 class="display-5 fw-bold text-center mb-3" style="color: #fafafa;">
+            Testimoni Pelanggan
+      </h1>
+      <div class="mx-auto mb-2 rounded-5"  style="width: 320px; border-bottom: 3px; border-color: #303030; border-style: solid;"></div>
+      <p class="text-muted fs-5">Apa kata mereka tentang Ensaglow?</p>
+    </div>
+
+    <div id="testimoniCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="false">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">a*****z</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional: No arrows for clean auto mode -->
+    </div>
+
+    <!-- feedback kedua -->
+    <div id="testimoniCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500" data-bs-pause="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">a*****z</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional: No arrows for clean auto mode -->
+    </div>
+
+    <!-- feedback ketiga -->
+    <div id="testimoniCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2700" data-bs-pause="false">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row justify-content-center">
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Ayu">
+                <p class="small text-dark mb-2">Alhamdulillah sudah nemu produk yang pas , hasilnya cepet , cuman belum rata sudah mau pot ke 3 , sudah bpom jadi gak takut lagi kalo untuk penggunaan jangka panjang</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">attabella13</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Rizky">
+                <p class="small text-dark mb-2">Disegel.kemasan rapi aman. Isi full. Semoga beneran memutihkan lah. Cepat sampai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">intanbgr1</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-4 mb-3">
+              <div class="card shadow-sm border-0 p-3 text-center h-100">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="rounded-circle mx-auto mb-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Dewi">
+                <p class="small text-dark mb-2">Sudah sampai
+Packing rapi tidak ada yang pecah
+Selain dipakai sendiri juga untuk dijual lagi
+Banyak yang suka karena wangi dan enak dipakai</p>
+                <h6 class="font-monospace text-decoration-underline text-muted mb-0">a*****z</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional: No arrows for clean auto mode -->
+    </div>
+  </div>
+</section>
+  <!-- FAQ Section for Ensaglow -->
+<section class="container mb-1 mb-md-2 p-5" id="faq"  data-aos="fade-up" data-aos-duration="700" data-aos-easing="ease-in-out">
+  <h2 class="display-5 fw-bold mb-3 text-center" style="color: #fcfcfc;">FAQ (Pertanyaan yang Sering Diajukan)</h2>
+    <div class="mx-auto mb-4 border border-4 border-dark w-50 rounded-5"></div>
+  <div class="accordion" id="faqEnsaglowAccordion">
+    <!-- Item 1 -->
+    <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+      <h2 class="accordion-header" id="ensafaq1-heading">
+        <button class="accordion-button fw-semibold text-dark py-3 fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#ensafaq1" aria-expanded="true" aria-controls="ensafaq1">
+          <i class="bi bi-bag-check me-3 text-primary fs-4"></i> Bagaimana cara membeli produk Ensaglow?
+        </button>
+      </h2>
+      <div id="ensafaq1" class="accordion-collapse collapse show" aria-labelledby="ensafaq1-heading" data-bs-parent="#faqEnsaglowAccordion">
+        <div class="accordion-body fs-5 py-3">
+          Anda dapat memilih paket Basic atau Premium, lalu klik tombol pemesanan via WhatsApp. Tim customer service kami akan memandu proses pemesanan hingga pengiriman.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+      <h2 class="accordion-header" id="ensafaq2-heading">
+        <button class="accordion-button collapsed fw-semibold text-dark py-3 fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#ensafaq2" aria-expanded="false" aria-controls="ensafaq2">
+          <i class="bi bi-shield-check me-3 text-primary fs-4"></i> Apakah produk Ensaglow aman dan sudah terdaftar BPOM?
+        </button>
+      </h2>
+      <div id="ensafaq2" class="accordion-collapse collapse" aria-labelledby="ensafaq2-heading" data-bs-parent="#faqEnsaglowAccordion">
+        <div class="accordion-body fs-5 py-3">
+          Ya, seluruh produk Ensaglow telah terdaftar di BPOM RI, diformulasikan dari bahan alami, tanpa mercury dan paraben. Aman digunakan termasuk untuk ibu hamil dan menyusui.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+      <h2 class="accordion-header" id="ensafaq3-heading">
+        <button class="accordion-button collapsed fw-semibold text-dark py-3 fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#ensafaq3" aria-expanded="false" aria-controls="ensafaq3">
+          <i class="bi bi-droplet-half me-3 text-primary fs-4"></i> Untuk jenis kulit apa saja produk Ensaglow cocok?
+        </button>
+      </h2>
+      <div id="ensafaq3" class="accordion-collapse collapse" aria-labelledby="ensafaq3-heading" data-bs-parent="#faqEnsaglowAccordion">
+        <div class="accordion-body fs-5 py-3">
+          Produk Ensaglow cocok untuk berbagai jenis kulit, termasuk kulit normal, berminyak, kering, kombinasi, hingga sensitif.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+      <h2 class="accordion-header" id="ensafaq4-heading">
+        <button class="accordion-button collapsed fw-semibold text-dark py-3 fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#ensafaq4" aria-expanded="false" aria-controls="ensafaq4">
+          <i class="bi bi-clock-history me-3 text-primary fs-4"></i> Kapan hasil penggunaan produk akan terlihat?
+        </button>
+      </h2>
+      <div id="ensafaq4" class="accordion-collapse collapse" aria-labelledby="ensafaq4-heading" data-bs-parent="#faqEnsaglowAccordion">
+        <div class="accordion-body fs-5 py-3">
+          Hasil bisa mulai terlihat dalam 2–4 minggu tergantung kondisi kulit. Beberapa pengguna bahkan melihat perubahan sejak minggu pertama.
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="accordion-item mb-4 border rounded-4 overflow-hidden shadow-sm">
+      <h2 class="accordion-header" id="ensafaq5-heading">
+        <button class="accordion-button collapsed fw-semibold text-dark py-3 fs-5" type="button" data-bs-toggle="collapse" data-bs-target="#ensafaq5" aria-expanded="false" aria-controls="ensafaq5">
+          <i class="bi bi-patch-question me-3 text-primary fs-4"></i> Apakah produk Ensaglow menyebabkan ketergantungan?
+        </button>
+      </h2>
+      <div id="ensafaq5" class="accordion-collapse collapse" aria-labelledby="ensafaq5-heading" data-bs-parent="#faqEnsaglowAccordion">
+        <div class="accordion-body fs-5 py-3">
+          Tidak. Produk Ensaglow tidak mengandung bahan yang menyebabkan ketergantungan. Penggunaan secara rutin disarankan untuk hasil maksimal.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+
+
+  <!-- Gallery Section -->
+  <section id="galeri" class="container mb-3 p-5">
+    <h2 class="display-5 fw-bold mb-3 text-center" style="color: #3F72AF;" data-aos="fade-down" data-aos-duration="700">Galeri Ensaglow</h2>
+      <div class="mx-auto mb-4 border border-4 border-dark w-25  rounded-5"></div>
+    <div class="row g-4">
+      <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-duration="900">
+        <div class="gallery-card card shadow rounded-4 overflow-hidden position-relative w-100 h-100" data-bs-toggle="modal" data-bs-target="#galeriModal1" style="cursor:pointer;">
+          <img src="img/galery1.png" class="card-img-top gallery-img" alt="Galeri Ensaglow 1" style="height:260px;object-fit:cover;">
+          <div class="gallery-overlay d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-eye-fill fs-2 text-white mb-2"></i>
+            <span class="text-white fw-bold">Lihat Detail</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-duration="1000">
+        <div class="gallery-card card shadow rounded-4 overflow-hidden position-relative w-100 h-100" data-bs-toggle="modal" data-bs-target="#galeriModal2" style="cursor:pointer;">
+          <img src="img/galery2.png" class="card-img-top gallery-img" alt="Galeri Ensaglow 2" style="height:260px;object-fit:cover;">
+          <div class="gallery-overlay d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-eye-fill fs-2 text-white mb-2"></i>
+            <span class="text-white fw-bold">Lihat Detail</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex" data-aos="fade-up" data-aos-duration="1100">
+        <div class="gallery-card card shadow rounded-4 overflow-hidden position-relative w-100 h-100" data-bs-toggle="modal" data-bs-target="#galeriModal3" style="cursor:pointer;">
+          <img src="img/galery3.png" class="card-img-top gallery-img" alt="Galeri Ensaglow 3" style="height:260px;object-fit:cover;">
+          <div class="gallery-overlay d-flex flex-column justify-content-center align-items-center">
+            <i class="bi bi-eye-fill fs-2 text-white mb-2"></i>
+            <span class="text-white fw-bold">Lihat Detail</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Galeri 1 -->
+<div class="modal fade shadow-xl" id="galeriModal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 p-0" style="overflow: hidden;">
+      <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="background: #fff; min-height: 250px;">
+        <img src="img/galery1.png" class="img-fluid" alt="Galeri Ensaglow 1" style="max-height: 80vh; object-fit: cover;">
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Modal Galeri 2 -->
+    <div class="modal fade shadow-xl" id="galeriModal2" tabindex="-1" aria-labelledby="galeriModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content rounded-4 p-0" style="overflow: hidden;">
+          <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="background: #fff; min-height: 250px;">
+            <img src="img/galery2.png" class="img-fluid w-100 h-100" alt="Galeri Ensaglow 1" style="object-fit: cover; width: 100%; height: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Galeri 3 -->
+    <div class="modal fade shadow-xl" id="galeriModal3" tabindex="-1" aria-labelledby="galeriModal1Label" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal">
+        <div class="modal-content rounded-4 p-0" style="overflow: hidden;">
+          <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="background: #fff; min-height: 250px;">
+            <img src="img/galery3.png" class="img-fluid w-100 h-100" alt="Galeri Ensaglow 1" style="object-fit: cover; width: 100%; height: 100%;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="kontak" class="py-5">
+    <div class="container mt-2 px-3">
+      <div class="text-center mb-5">
+        <h1 class="text-4xl fw-bold">Kontak Kami</h1>
+        <p class="text-muted fs-5">Kami siap membantu! Hubungi kami untuk pertanyaan atau masukan apa pun.</p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Contact Info -->
+        <div class="col-lg-5 d-flex flex-column gap-4">
+          <div class="bg-success bg-gradient rounded p-4 d-flex align-items-start gap-3 shadow text-white">
+            <i class="fa-solid fa-location-dot bg-white text-dark p-3 rounded-circle fs-5"></i>
+            <div>
+              <h5 class="fw-bold">ALAMAT</h5>
+              <p class="mb-0">Kec. SOko, Kabupaten Tuban, Jawa Timur</p>
+            </div>
+          </div>
+
+          <div class="bg-success bg-gradient rounded p-4 d-flex align-items-start gap-3 shadow text-white">
+            <i class="fa-solid fa-phone bg-white text-dark p-3 rounded-circle fs-5"></i>
+            <div>
+              <h5 class="fw-bold">NO. HP</h5>
+              <p class="mb-0">
+                +62 889-8900-5828<br />
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-success bg-gradient rounded p-4 d-flex align-items-start gap-3 shadow text-white">
+            <i class="fa-regular fa-envelope bg-white text-dark p-3 rounded-circle fs-5"></i>
+            <div>
+              <h5 class="fw-bold">KATALOG INSTAGRAM</h5>
+              <p class="mb-0">@ensaglowpusat</p>
+              <p class="mb-0">@realtestimoni_ensaglowpusat</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7 shadow p-4 rounded">
+          <form id="waForm" onsubmit="sendToWhatsApp(event)">
+            <div class="mb-3" data-aos="fade-right" data-aos-duration="800">
+              <label for="name" class="form-label fw-bold">Your Name</label>
+              <div class="input-group">
+                <span class="input-group-text text-muted"><i class="fa-solid fa-user"></i></span>
+                <input type="text" id="name" class="form-control" placeholder="Enter your name" required />
+              </div>
+            </div>
+
+            <div class="mb-3" data-aos="fade-right" data-aos-duration="1000">
+              <label for="message" class="form-label fw-bold">Your Message</label>
+              <div class="input-group">
+                <span class="input-group-text text-muted"><i class="fa-solid fa-comment"></i></span>
+                <textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+              </div>
+            </div>
+
+            <div class="mt-4" data-aos="fade-up" data-aos-duration="1100">
+              <button type="submit" class="btn btn-success bg-gradient w-100 fw-bold d-flex align-items-center justify-content-center gap-2">
+                Send Message <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Maps Section -->
+<section id="maps" class="container mb-5 p-5 fade-left delay">
+  <h2 class="display-5 fw-bold mb-3 text-center" style="color: #3F72AF;">Lokasi Ensaglow</h2>
+  <div class="mx-auto mb-4 border border-4 border-dark w-25  rounded-5"></div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <div class="rounded-4 shadow overflow-hidden" style="height:400px;">
+        <iframe 
+          src="https://www.google.com/maps?q=SOko,+Kabupaten+Tuban,+Jawa+Timur&hl=id&z=14&output=embed"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer id="footer" class=" m-2 m-md-3 m-lg-3 ms-2 ms-md-3 ms-lg-4 me-2 me-md-3 me-lg-4 mb-2 mb-md-3 mb-lg-4 p-5 rounded-5 border shadow-lg">
+      <div class="container-fluid text-left text-md-left">
+        <div class="row  mx-auto">
+          
+          <!-- Column 1 -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
+            <img src="https://i.ibb.co/tM3DBDJn/logo.png" class="w-50 mb-3" alt="">
+            <p class="fw-light fs-5 mb-2">Akira Website adalah platform digital modern untuk pencinta literasi.</p>
+            <ul class="list-unstyled d-flex" style="  color: #eeeeee;">
+              <li class="list-inline-item"><i class="fas fa-map-marker-alt pe-2"></i>Bojonegoro, Jawa Timur, Indonesia</li>
+           </ul> 
+          </div>
+    
+          <!-- Column 2 -->
+          <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mt-3 ps-2 ps-mb-5 ps-lg-5">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Navigasi</h5>
+            <p>
+                <a href="#produk" style="text-decoration: none;">Semua Produk</a>
+            </p>
+            <p>
+                <a href="#galeri" style="text-decoration: none;">Galery</a>
+            </p>
+            <p>
+                <a href="#maps" style="text-decoration: none;">Lokasi</a>
+            </p>
+          </div>
+    
+          <!-- Column 3 -->
+          <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3 ps-2 ps-mb-5 ps-lg-5">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Tentang</h5>
+            <p>
+                <a href="#tentang" style="text-decoration: none;">Tentang Kami</a>
+            </p>
+            <p>
+                <a href="#beranda" style="text-decoration: none;">Beranda</a>
+            </p>
+            <p>
+                <a href="#kenapa-ensaglow" style="text-decoration: none;">Kenapa Harus Kami?</a>
+            </p>
+          </div>
+    
+          <!-- Column 4 -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3 ps-2 ps-mb-5 ps-lg-5">
+            <h5 class="text-uppercase mb-4 font-weight-bold">Support</h5>
+            <p>
+                <a href="#faq" style="text-decoration: none;"> FAQ</a>
+            </p>
+            <p>
+                <a href="#kontak" style="text-decoration: none;"> Kontak</a>
+            </p>
+            <p>
+                <a href="#testimoni" style="text-decoration: none;"> Testimoni</a>
+            </p>
+          </div>
+            <hr>
+        </div>
+
+    
+        <!-- Footer Bottom -->
+        <div class="container-fluid m-1">
+          <div class="row align-items-center">
+            <div class="col-12 col-md-6">
+              <p class="text-center text-md-start" style="  color: #eeeeee;">© 2024 Company Akira By Alifvino. All Rights Reserved.</p>
+            </div>
+            <div class="col-12 col-md-6">
+              <ul class="list-unstyled list-inline text-center text-md-end">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/" class=""><i class="fab fa-facebook-f fs-4"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://x.com/" class=""><i class="fab fa-twitter fs-4"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/" class=""><i class="fab fa-instagram fs-4"></i></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/" class=""><i class="fab fa-linkedin-in fs-4"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>        
+        </div>
+      </div>
+</footer>
+
+</main>
+
+
+
+
+
+    <!-- Booststrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+    <!-- Scrool Reveal -->
+     <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- link js -->
+     <script src="main.js"></script>
+    
+</body>
+</html>

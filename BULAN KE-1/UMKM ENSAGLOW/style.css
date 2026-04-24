@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+.Hero {
+  background: url("img/HERO.svg") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100px; 
+  padding-bottom: 50px;
+  min-height: 60vh;
+}
+
+@media (min-width: 992px) {
+  .Hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .Hero {
+    min-height: 70vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .Hero {
+    background: url("img/HEROMOBILE.svg") no-repeat center top;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.navbar {
+  background-color: #e0b7a4; 
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #c2185b;
+}
+
+.navbar .navbar-toggler {
+  border-color: white;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar .navbar-toggler .navbarNav {
+  margin-right: 800px;
+}
+
+.mode-toggle {
+  background-color: #2e2e2e;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
+  background-color: #6b6b6b;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .mode-toggle {
+  background-color: #F9F7F7;
+  color: #112D4E;
+}
+
+.dark-mode .mode-toggle:hover {
+  background-color: #e3e3e3;
+}
+
+
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom right, #fff0f6, #ffe3e3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Spinner dengan nuansa soft pink */
+.beauty-spinner {
+  width: 60px;
+  height: 60px;
+  border: 5px solid #fce4ec;
+  border-top: 5px solid #e91e63;
+  border-radius: 50%;
+  animation: spin 1.2s ease-in-out infinite;
+  box-shadow: 0 0 15px #f8bbd0;
+  margin-bottom: 25px;
+}
+
+/* Text lembut & elegan */
+.loading-text {
+  font-size: 1.6rem;
+  color: #880e4f;
+  text-shadow: 0 0 2px #fce4ec;
+  animation: fadeIn 2s ease-in-out infinite;
+}
+
+.loading-text span {
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* Animasi */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+      .produk-img-hover {
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+      }
+      .produk-img-hover:hover {
+        transform: scale(1.08) rotate(-2deg);
+        filter: brightness(1.08) contrast(1.05);
+      }
+
+
+.btn-detail:hover{
+  background-color: #5f57fc !important;
+  color: #fff !important;
+}
+
+ .parallax {
+      background-image: url('img/PARALAX.svg'); 
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+  .gallery-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .gallery-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(63, 114, 175, 0.18);
+  }
+  .gallery-img {
+    transition: filter 0.3s;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+  .gallery-card:hover .gallery-img {
+    filter: brightness(0.7) blur(1px);
+  }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(218, 218, 218, 0.753));
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    display: flex;
+  }
+  .gallery-card:hover .gallery-overlay {
+    opacity: 1;
+  }
+
+
+#footer {
+  background-color: #9b4300d2;
+  color: #ffffff;
+}
+
+#footer a {
+  color: #eeeeee;
+}
+
+#footer a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuacaGo - Aplikasi Prakiraan Cuaca</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS for Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!--link  CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="80">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- Floating Action Button -->
+    <div class="fab" id="fab" title="Kembali ke atas">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navbar dengan ScrollSpy -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-cloud-sun"></i>CuacaGo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#current-weather">Cuaca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#weather-map">Peta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#forecast">Prakiraan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section dengan Parallax Effect -->
+    <section id="home" class="hero-section section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="display-4">CuacaGo</h1>
+                        <p class="lead">Cek cuaca terkini di seluruh Indonesia dengan mudah dan cepat. Dapatkan informasi cuaca real-time dan prakiraan untuk perencanaan aktivitas Anda.</p>
+                        
+                        <div class="search-container">
+                            <div class="input-group input-group-lg">
+                                <input type="text" id="cityInput" class="form-control border-0 shadow-none" placeholder="Cari nama kota atau daerah...">
+                                <button id="searchBtn" class="btn btn-warning" type="button">
+                                    <i class="fas fa-search me-2"></i>Cari Cuaca
+                                </button>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <p class="mb-2 text-white-80">Kota populer:</p>
+                                <div>
+                                    <button class="btn btn-outline-light quick-action-btn" data-city="Jakarta">
+                                        <i class="fas fa-map-marker-alt"></i> Jakarta
+                                    </button>
+                                    <button class="btn btn-outline-light quick-action-btn" data-city="Surabaya">
+                                        <i class="fas fa-map-marker-alt"></i> Surabaya
+                                    </button>
+                                    <button class="btn btn-outline-light quick-action-btn" data-city="Bandung">
+                                        <i class="fas fa-map-marker-alt"></i> Bandung
+                                    </button>
+                                    <button class="btn btn-outline-light quick-action-btn" data-city="Medan">
+                                        <i class="fas fa-map-marker-alt"></i> Medan
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <p class="mb-2 text-white-80">Satuan suhu:</p>
+                                <div class="temp-toggle-container">
+                                    <button class="temp-toggle-btn active" data-unit="celsius">°C Celsius</button>
+                                    <button class="temp-toggle-btn" data-unit="fahrenheit">°F Fahrenheit</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <p class="mb-3">Bagaimana cara menggunakan CuacaGo?</p>
+                            <div class="row justify-content-center">
+                                <div class="col-md-4 mb-3">
+                                    <div class="guide-step">
+                                        <div class="guide-number">1</div>
+                                        <div>
+                                            <h6 class="mb-1">Cari Kota</h6>
+                                            <p class="small mb-0">Masukkan nama kota atau pilih dari daftar</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="guide-step">
+                                        <div class="guide-number">2</div>
+                                        <div>
+                                            <h6 class="mb-1">Lihat Cuaca</h6>
+                                            <p class="small mb-0">Dapatkan informasi cuaca real-time</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="guide-step">
+                                        <div class="guide-number">3</div>
+                                        <div>
+                                            <h6 class="mb-1">Rencanakan</h6>
+                                            <p class="small mb-0">Gunakan prakiraan untuk aktivitas Anda</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Weather Section -->
+    <section id="current-weather" class="section">
+        <div class="container">
+            <h2 class="section-title">Cuaca Sekarang</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="weather-card current-weather">
+                        <div class="card-body p-5">
+                            <div class="spinner-container" id="currentWeatherSpinner">
+                                <div class="spinner-border text-warning" role="status">
+                                    <span class="visually-hidden">Memuat...</span>
+                                </div>
+                                <p class="mt-3">Mengambil data cuaca terkini...</p>
+                            </div>
+                            
+                            <div id="currentWeatherContent" style="display: none;">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                                        <h3 id="currentCity" class="mb-3">Jakarta, Indonesia</h3>
+                                        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                                            <div class="weather-icon-large me-4">
+                                                <i id="currentWeatherIcon" class="fas fa-sun"></i>
+                                            </div>
+                                            <div>
+                                                <div class="temperature" id="currentTemp">28°C</div>
+                                                <div id="currentCondition" class="fs-4 mb-2">Cerah</div>
+                                                <div>
+                                                    <span class="update-indicator">
+                                                        <i class="fas fa-sync-alt me-1"></i> Baru diperbarui
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="col-md-6 mb-3">
+                                                <div class="weather-detail-item">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <i class="fas fa-temperature-low me-2"></i>
+                                                            <span class="fw-medium">Terasa Seperti</span>
+                                                        </div>
+                                                        <span id="feelsLike" class="fw-bold">30°C</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="weather-detail-item">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <i class="fas fa-tint me-2"></i>
+                                                            <span class="fw-medium">Kelembaban</span>
+                                                        </div>
+                                                        <span id="humidity" class="fw-bold">65%</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="weather-detail-item">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <i class="fas fa-wind me-2"></i>
+                                                            <span class="fw-medium">Angin</span>
+                                                        </div>
+                                                        <span id="windSpeed" class="fw-bold">12 km/jam</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 mb-3">
+                                                <div class="weather-detail-item">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div>
+                                                            <i class="fas fa-compress-alt me-2"></i>
+                                                            <span class="fw-medium">Tekanan</span>
+                                                        </div>
+                                                        <span id="pressure" class="fw-bold">1013 hPa</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <i class="fas fa-calendar-alt me-2"></i>
+                                                        <span>Terakhir diperbarui:</span>
+                                                    </div>
+                                                    <span id="lastUpdated" class="fw-bold">Hari ini, 10:00 WIB</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Today's Weather Details Grid -->
+                                <div class="today-details-grid">
+                                    <div class="detail-card">
+                                        <i class="fas fa-sun"></i>
+                                        <div class="value" id="uvIndex">5</div>
+                                        <div class="label">Indeks UV</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fas fa-eye"></i>
+                                        <div class="value" id="visibility">10 km</div>
+                                        <div class="label">Visibilitas</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fas fa-cloud-rain"></i>
+                                        <div class="value" id="precipitation">10%</div>
+                                        <div class="label">Curah Hujan</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fas fa-cloud"></i>
+                                        <div class="value" id="cloudCover">25%</div>
+                                        <div class="label">Tutupan Awan</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fas fa-sunrise"></i>
+                                        <div class="value" id="sunrise">05:30</div>
+                                        <div class="label">Matahari Terbit</div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fas fa-sunset"></i>
+                                        <div class="value" id="sunset">17:45</div>
+                                        <div class="label">Matahari Terbenam</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Today's Highlights -->
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <h5 class="mb-3">Cuaca Hari Ini</h5>
+                                        <div class="row">
+                                            <div class="col-md-3 col-6 mb-3">
+                                                <div class="highlight-card">
+                                                    <div class="highlight-title">
+                                                        <i class="fas fa-thermometer-half me-2"></i>
+                                                        Suhu Maks
+                                                    </div>
+                                                    <div class="highlight-value">31<span class="highlight-unit">°C</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6 mb-3">
+                                                <div class="highlight-card">
+                                                    <div class="highlight-title">
+                                                        <i class="fas fa-thermometer me-2"></i>
+                                                        Suhu Min
+                                                    </div>
+                                                    <div class="highlight-value">24<span class="highlight-unit">°C</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6 mb-3">
+                                                <div class="highlight-card">
+                                                    <div class="highlight-title">
+                                                        <i class="fas fa-wind me-2"></i>
+                                                        Kecepatan Angin
+                                                    </div>
+                                                    <div class="highlight-value">12<span class="highlight-unit">km/jam</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-6 mb-3">
+                                                <div class="highlight-card">
+                                                    <div class="highlight-title">
+                                                        <i class="fas fa-tint me-2"></i>
+                                                        Kelembaban
+                                                    </div>
+                                                    <div class="highlight-value">65<span class="highlight-unit">%</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Hourly Forecast -->
+                                <div class="row mt-4">
+                                    <div class="col-12">
+                                        <h5 class="mb-3">Prakiraan Per Jam (12 jam ke depan)</h5>
+                                        <div class="hourly-container">
+                                            <div class="hourly-scroll" id="hourlyForecast">
+                                                <!-- Hourly items will be added here -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="weatherAlert" class="weather-alert mt-4" style="display: none;">
+                                    <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                                    <div>
+                                        <strong>Peringatan Cuaca:</strong> 
+                                        <span id="alertText">Hujan lebat diperkirakan terjadi di wilayah ini. Harap waspada dan siapkan payung.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Map Section -->
+    <section id="weather-map" class="section">
+        <div class="container">
+            <h2 class="section-title">Peta Cuaca Interaktif</h2>
+            <p class="text-center mb-4">Klik pada peta untuk melihat cuaca di lokasi tertentu</p>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="position-relative">
+                        <div id="weatherMap"></div>
+                        <div class="map-controls">
+                            <div class="btn-group-vertical" role="group">
+                                <button type="button" class="btn btn-light btn-sm mb-2 active" id="mapLocation" title="Pilih lokasi di peta">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </button>
+                                <button type="button" class="btn btn-light btn-sm" id="mapZoomIn" title="Zoom in">
+                                    <i class="fas fa-search-plus"></i>
+                                </button>
+                                <button type="button" class="btn btn-light btn-sm mt-2" id="mapZoomOut" title="Zoom out">
+                                    <i class="fas fa-search-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Fixed Layer Buttons -->
+                    <div class="text-center mt-4">
+                        <p class="text-muted">Pilih jenis informasi yang ingin ditampilkan:</p>
+                        <div class="d-flex flex-wrap justify-content-center" id="mapLayerButtons">
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2 layer-btn active" data-layer="temp">
+                                <i class="fas fa-thermometer-half me-1"></i>Suhu
+                            </button>
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2 layer-btn" data-layer="precipitation">
+                                <i class="fas fa-cloud-rain me-1"></i>Curah Hujan
+                            </button>
+                            <button type="button" class="btn btn-outline-primary me-2 mb-2 layer-btn" data-layer="wind">
+                                <i class="fas fa-wind me-1"></i>Angin
+                            </button>
+                            <button type="button" class="btn btn-outline-primary mb-2 layer-btn" data-layer="cloud">
+                                <i class="fas fa-cloud me-1"></i>Awan
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weather Forecast Section dengan Parallax Effect -->
+    <section id="forecast" class="section with-parallax">
+        <div class="container">
+            <h2 class="section-title">Prakiraan 7 Hari</h2>
+            <p class="text-center mb-5">Perencanaan yang lebih baik dengan prakiraan cuaca hingga seminggu ke depan</p>
+            
+            <div class="spinner-container" id="forecastSpinner">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Memuat...</span>
+                </div>
+                <p class="mt-3">Memuat prakiraan cuaca...</p>
+            </div>
+            
+            <div class="row" id="forecastContent" style="display: none;">
+                <!-- Forecast cards will be dynamically inserted here -->
+            </div>
+            
+            <div class="info-box mt-5">
+                <h4><i class="fas fa-lightbulb me-2"></i>Tips Berdasarkan Cuaca</h4>
+                <p id="weatherTips" class="mb-0">Dengan cuaca cerah seperti ini, ini waktu yang tepat untuk aktivitas outdoor seperti berjalan-jalan atau bersepeda. Jangan lupa gunakan tabir surya untuk melindungi kulit Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">Tentang CuacaGo</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="info-box">
+                        <h4>Aplikasi Cuaca Terpercaya untuk Indonesia</h4>
+                        <p>CuacaGo adalah aplikasi prakiraan cuaca yang dirancang khusus untuk pengguna Indonesia. Kami menyediakan informasi cuaca akurat dan mudah dipahami untuk membantu Anda merencanakan aktivitas sehari-hari.</p>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-bolt text-primary fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Real-time</h5>
+                                        <p class="mb-0">Data cuaca diperbarui setiap 10 menit</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-map-marked-alt text-primary fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Seluruh Indonesia</h5>
+                                        <p class="mb-0">Cakupan semua kota dan daerah di Indonesia</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-mobile-alt text-primary fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Responsif</h5>
+                                        <p class="mb-0">Akses dari smartphone, tablet, atau komputer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-lock-open text-primary fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h5>Gratis 100%</h5>
+                                        <p class="mb-0">Tanpa biaya, tanpa iklan, tanpa login</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Sumber Data</h5>
+                            <p>CuacaGo menggunakan data dari <strong>Open-Meteo API</strong> yang menyediakan informasi cuaca akurat untuk seluruh dunia. API ini sepenuhnya gratis dan tidak memerlukan API key.</p>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5>Tim Kami</h5>
+                            <p>Dikembangkan oleh tim yang peduli dengan kebutuhan informasi cuaca masyarakat Indonesia. Kami terus memperbarui dan meningkatkan aplikasi untuk pengalaman terbaik.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Dari mana data cuaca diperoleh?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Data cuaca diperoleh dari sumber terpercaya dan API cuaca yang menyediakan informasi real-time dan prakiraan cuaca untuk berbagai wilayah di seluruh dunia.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Seberapa sering data cuaca diperbarui?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Data cuaca real-time diperbarui setiap 10 menit, sedangkan prakiraan cuaca harian diperbarui setiap 6 jam untuk memastikan akurasi informasi.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Apakah aplikasi ini gratis?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ya, CuacaGo sepenuhnya gratis untuk digunakan. Anda dapat mengakses semua fitur tanpa biaya apapun.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Bagaimana cara melaporkan ketidakakuratan data?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Anda dapat melaporkan ketidakakuratan data melalui formulir kontak yang tersedia di bagian Kontak pada website ini.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    Apakah aplikasi ini tersedia untuk mobile?
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ya, CuacaGo dirancang responsif dan dapat diakses dengan optimal melalui smartphone, tablet, maupun desktop.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Formulir Kontak</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto bg-white p-4 rounded-3 shadow-sm">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subjek</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="">Pilih subjek</option>
+                                    <option value="data-issue">Laporan Data Tidak Akurat</option>
+                                    <option value="feature-request">Permintaan Fitur</option>
+                                    <option value="bug-report">Laporan Bug</option>
+                                    <option value="general">Pertanyaan Umum</option>
+                                    <option value="other">Lainnya</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Pesan</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Kirim Pesan</button>
+                            </div>
+                            <div class="alert alert-success mt-3 d-none" id="contactSuccess">
+                                Pesan Anda telah berhasil dikirim. Terima kasih!
+                            </div>
+                            <div class="alert alert-danger mt-3 d-none" id="contactError">
+                                Terjadi kesalahan. Silakan coba lagi nanti.
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h1><i class="fas fa-cloud-sun me-2"></i>CuacaGo</h5>
+                    <p>Aplikasi prakiraan cuaca terkini dengan informasi real-time, prakiraan harian, dan peta interaktif untuk membantu Anda merencanakan aktivitas dengan lebih baik.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Menu</h5>
+                    <div class="footer-links">
+                        <a href="#home">Beranda</a>
+                        <a href="#current-weather">Cuaca Sekarang</a>
+                        <a href="#weather-map">Peta Cuaca</a>
+                        <a href="#forecast">Prakiraan</a>
+                        <a href="#about">Tentang Kami</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Kontak</h5>
+                    <div class="footer-links">
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Jakarta, Indonesia</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@cuacago.com</p>
+                        <p><i class="fas fa-phone me-2"></i> +62 21 1234 5678</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Jam Operasional</h5>
+                    <div class="footer-links">
+                        <p><i class="fas fa-clock me-2"></i> Setiap Hari</p>
+                        <p class="small">24 Jam / 7 Hari</p>
+                        <p class="small mt-2">Data diperbarui setiap 10 menit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 CuacaGo. Semua hak dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Box -->
+    <div class="notification" id="notification">
+        <div class="d-flex">
+            <div class="me-3">
+                <i class="fas fa-check-circle text-success fa-2x"></i>
+            </div>
+            <div>
+                <h6 class="mb-1" id="notificationTitle">Sukses!</h6>
+                <p class="mb-0 small" id="notificationMessage">Data cuaca berhasil diperbarui</p>
+            </div>
+            <button type="button" class="btn-close ms-auto" onclick="hideNotification()"></button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    
+    <!-- Leaflet JS for Maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>

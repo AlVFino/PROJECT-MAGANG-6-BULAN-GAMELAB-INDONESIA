@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kabar Sini - Sumber berita terpercaya dan terkini untuk politik, ekonomi, olahraga, dan berbagai kategori lainnya">
+    <meta name="keywords" content="berita, politik, ekonomi, olahraga, kabar terkini, berita terbaru">
+    <title>Kabar Sini - Berita Terpercaya dan Terkini</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="100">
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="logo" href="#home">
+                <div class="logo-icon">KS</div>
+                <div class="logo-text">
+                    <span class="logo-main">Kabar Sini</span>
+                    <span class="logo-sub">Berita Terpercaya</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#popular">Populer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categories">Kategori</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#latest">Terbaru</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/Banner Section -->
+    <section id="home" class="hero-section">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container hero-content">
+            <div data-aos="fade-up" data-aos-duration="1000">
+                <span class="hero-badge">Berita Terkini & Terpercaya</span>
+                <h1 class="hero-title">Informasi Terbaru Seputar Berita Hari Ini</h1>
+                <p class="hero-subtitle">Dapatkan update berita terbaru seputar politik, ekonomi, olahraga, teknologi, dan berbagai topik menarik lainnya dari sumber terpercaya.</p>
+                <a href="#latest" class="btn btn-hero">Jelajahi Berita <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular News Section -->
+    <section id="popular" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Berita Populer</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Berita paling banyak dibaca dan dikomentari oleh pembaca</p>
+            <div class="row">
+                <!-- Popular News 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card">
+                        <div class="news-img-container">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="news-img" alt="Berita Ekonomi Terpopuler">
+                            <span class="news-category">Ekonomi</span>
+                            <span class="news-date">5 jam lalu</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pertumbuhan Ekonomi Nasional Kuartal Ini Capai 5,2%</h5>
+                            <p class="card-text">Pertumbuhan ekonomi Indonesia menunjukkan tren positif dengan capaian 5,2% pada kuartal ini, tertinggi dalam 3 tahun.</p>
+                            <div class="news-meta">
+                                <div class="news-author">
+                                    <div class="author-avatar">AS</div>
+                                    <span>Andi S.</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popular News 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card">
+                        <div class="news-img-container">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="news-img" alt="Berita Ekonomi Terpopuler">
+                            <span class="news-category">Ekonomi</span>
+                            <span class="news-date">5 jam lalu</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pertumbuhan Ekonomi Nasional Kuartal Ini Capai 5,2%</h5>
+                            <p class="card-text">Pertumbuhan ekonomi Indonesia menunjukkan tren positif dengan capaian 5,2% pada kuartal ini, tertinggi dalam 3 tahun.</p>
+                            <div class="news-meta">
+                                <div class="news-author">
+                                    <div class="author-avatar">AS</div>
+                                    <span>Andi S.</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Popular News 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="news-card">
+                        <div class="news-img-container">
+                            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="news-img" alt="Berita Olahraga Terpopuler">
+                            <span class="news-category">Olahraga</span>
+                            <span class="news-date">1 hari lalu</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Timnas Indonesia Siap Hadapi Laga Kualifikasi Piala Dunia</h5>
+                            <p class="card-text">Pelatih timnas Indonesia mengumumkan skuad terbaik untuk menghadapi laga kualifikasi Piala Dunia mendatang.</p>
+                            <div class="news-meta">
+                                <div class="news-author">
+                                    <div class="author-avatar">RS</div>
+                                    <span>Rizki S.</span>
+                                </div>
+                                <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Kategori Berita</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Jelajahi berita berdasarkan kategori yang Anda minati</p>
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <span class="category-badge active">Semua</span>
+                <span class="category-badge">Politik</span>
+                <span class="category-badge">Ekonomi</span>
+                <span class="category-badge">Olahraga</span>
+                <span class="category-badge">Teknologi</span>
+                <span class="category-badge">Kesehatan</span>
+                <span class="category-badge">Hiburan</span>
+                <span class="category-badge">Pendidikan</span>
+                <span class="category-badge">Lingkungan</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section id="latest" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Berita Terbaru</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Update berita terkini dari berbagai sumber terpercaya</p>
+            <div class="row">
+                <!-- Latest News 1 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="news-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="news-img-container h-100">
+                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" class="news-img" alt="Berita Lingkungan Terbaru">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-warning mb-2">Lingkungan</span>
+                                    <h5 class="card-title">Gerakan Nasional Penanaman 10 Juta Pohon Dimulai</h5>
+                                    <p class="card-text">Pemerintah meluncurkan gerakan nasional penanaman 10 juta pohon untuk memerangi perubahan iklim.</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted">5 jam yang lalu</small>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Latest News 2 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="news-img-container h-100">
+                                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="news-img" alt="Berita Kesehatan Terbaru">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Kesehatan</span>
+                                    <h5 class="card-title">Penemuan Vaksin Baru untuk Penyakit Langka</h5>
+                                    <p class="card-text">Para peneliti berhasil mengembangkan vaksin baru yang efektif melawan penyakit langka yang selama ini sulit diobati.</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted">1 jam yang lalu</small>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Latest News 3 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="news-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="news-img-container h-100">
+                                    <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" class="news-img" alt="Berita Kesehatan Terbaru">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-success mb-2">Kesehatan</span>
+                                    <h5 class="card-title">Penemuan Vaksin Baru untuk Penyakit Langka</h5>
+                                    <p class="card-text">Para peneliti berhasil mengembangkan vaksin baru yang efektif melawan penyakit langka yang selama ini sulit diobati.</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted">1 jam yang lalu</small>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Latest News 4 -->
+                <div class="col-lg-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="news-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <div class="news-img-container h-100">
+                                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" class="news-img" alt="Berita Lingkungan Terbaru">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <span class="badge bg-warning mb-2">Lingkungan</span>
+                                    <h5 class="card-title">Gerakan Nasional Penanaman 10 Juta Pohon Dimulai</h5>
+                                    <p class="card-text">Pemerintah meluncurkan gerakan nasional penanaman 10 juta pohon untuk memerangi perubahan iklim.</p>
+                                    <div class="news-meta">
+                                        <small class="text-muted">5 jam yang lalu</small>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">Baca</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="#" class="btn btn-primary btn-lg">Lihat Semua Berita <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Stats Section -->
+    <section class="parallax-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="fade-up">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Berita Harian</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-text">Pembaca Aktif</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-item">
+                        <div class="stat-number">25+</div>
+                        <div class="stat-text">Kategori Berita</div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-text">Tahun Pengalaman</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="mb-4 text-start">Tentang Kabar Sini</h2>
+                    <p class="mb-4">Kabar Sini adalah platform berita online yang menyajikan informasi terkini dan terpercaya dari berbagai kategori, termasuk politik, ekonomi, olahraga, teknologi, dan banyak lagi.</p>
+                    <p class="mb-4">Kami berkomitmen untuk menyajikan berita yang akurat, berimbang, dan mudah dipahami oleh semua kalangan. Tim jurnalistik kami terdiri dari para profesional yang berpengalaman di bidangnya masing-masing.</p>
+                    <p class="mb-4">Dengan fokus pada kualitas konten dan pengalaman pengguna, Kabar Sini hadir untuk memenuhi kebutuhan informasi masyarakat Indonesia yang semakin dinamis.</p>
+                    <div class="mt-4">
+                        <a href="#" class="btn btn-primary me-3">Selengkapnya</a>
+                        <a href="#contact" class="btn btn-outline-primary">Hubungi Kami</a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="img-fluid rounded shadow" alt="Tim Redaksi">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Pertanyaan yang Sering Diajukan</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Temukan jawaban untuk pertanyaan umum tentang Kabar Sini</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Bagaimana cara mendapatkan notifikasi berita terbaru?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Anda dapat berlangganan newsletter kami dengan memasukkan email Anda pada formulir yang tersedia di bagian bawah website. Selain itu, Anda juga dapat mengikuti media sosial kami untuk update berita terbaru.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    Apakah Kabar Sini gratis untuk diakses?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ya, semua konten di Kabar Sini dapat diakses secara gratis. Kami berkomitmen untuk menyediakan informasi yang berkualitas tanpa biaya bagi pembaca.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Bagaimana cara melaporkan kesalahan dalam berita?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Jika Anda menemukan kesalahan dalam pemberitaan kami, silakan hubungi tim redaksi melalui formulir kontak yang tersedia atau kirim email ke redaksi@kabarsini.com. Kami akan meninjau dan memperbaiki kesalahan tersebut secepatnya.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Bisakah saya mengirimkan berita atau opini untuk dipublikasikan?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Tentu saja. Kami menerima kontribusi dari pembaca dalam bentuk berita, opini, atau tulisan lainnya. Silakan kirimkan naskah Anda melalui formulir kontak dengan subjek "Kontribusi Artikel". Tim redaksi kami akan meninjau dan menghubungi Anda jika tulisan tersebut sesuai dengan standar kami.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Hubungi Kami</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Kami siap membantu dan menjawab pertanyaan Anda</p>
+            <div class="row">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="contact-form">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Alamat Email" required>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Subjek" required>
+                            <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+                            <button type="submit" class="btn btn-primary w-100 py-3">Kirim Pesan <i class="fas fa-paper-plane ms-2"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-info">
+                        <h3 class="text-white mb-4">Info Kontak</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Alamat</h5>
+                                <p>Jl. Merdeka No. 123, Jakarta Pusat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Telepon</h5>
+                                <p>+62 21 1234 5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>Email</h5>
+                                <p>redaksi@kabarsini.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-icons mt-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4" data-aos="fade-up">
+                    <div class="footer-logo">
+                        <a class="logo" href="#home">
+                            <div class="logo-icon">KS</div>
+                            <div class="logo-text">
+                                <span class="logo-main">Kabar Sini</span>
+                                <span class="logo-sub">Berita Terpercaya</span>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="footer-about">Platform berita terpercaya yang menyajikan informasi terkini dan akurat dari berbagai kategori untuk masyarakat Indonesia.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="footer-heading">Kategori</h5>
+                    <div class="footer-links">
+                        <a href="#">Politik</a>
+                        <a href="#">Ekonomi</a>
+                        <a href="#">Olahraga</a>
+                        <a href="#">Teknologi</a>
+                        <a href="#">Kesehatan</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h5 class="footer-heading">Tautan</h5>
+                    <div class="footer-links">
+                        <a href="#home">Beranda</a>
+                        <a href="#popular">Berita Populer</a>
+                        <a href="#latest">Berita Terbaru</a>
+                        <a href="#about">Tentang Kami</a>
+                        <a href="#contact">Kontak</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h5 class="footer-heading">Berlangganan Newsletter</h5>
+                    <p>Dapatkan update berita terbaru langsung ke email Anda.</p>
+                    <div class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Alamat Email">
+                        <button class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="text-center">&copy; 2023 Kabar Sini. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JS -->
+     <script src="main.js"></script>
+</body>
+</html>

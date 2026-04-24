@@ -1,0 +1,1118 @@
+
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3a0ca3;
+            --accent-color: #4cc9f0;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --success-color: #06d6a0;
+            --warning-color: #ffd166;
+            --danger-color: #ef476f;
+        }
+        
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Navbar dengan ScrollSpy Highlight */
+        .navbar {
+            background-color: rgba(67, 97, 238, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 15px 0;
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            background-color: rgba(67, 97, 238, 0.98);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: white !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-brand::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--warning-color);
+            transition: width 0.5s ease;
+        }
+        
+        .navbar-brand:hover::after {
+            width: 100%;
+        }
+        
+        .navbar-brand i {
+            color: var(--warning-color);
+            margin-right: 12px;
+            transition: transform 0.5s ease;
+        }
+        
+        .navbar-brand:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 600;
+            margin: 0 8px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 8px;
+            padding: 10px 20px !important;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .nav-link:hover::before {
+            left: 100%;
+        }
+        
+        .nav-link:hover {
+            color: white !important;
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link.active {
+            color: white !important;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--warning-color), #ff9e00);
+            box-shadow: 0 5px 15px rgba(255, 157, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section dengan Parallax Effect */
+        .hero-section {
+            background: linear-gradient(rgba(67, 97, 238, 0.85), rgba(58, 12, 163, 0.8)), 
+                        url('https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-attachment: fixed; /* Efek Parallax */
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            margin-top: 70px;
+            border-radius: 0 0 40px 40px;
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Efek partikel di background hero */
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(to right, #ffffff, #ffd166);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: scaleIn 1s ease 0.6s both;
+            transform-origin: center;
+            transition: all 0.5s ease;
+        }
+        
+        .search-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        /* Weather Cards dengan Hover Effect */
+        .weather-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            border: none;
+            position: relative;
+        }
+        
+        .weather-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .weather-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .weather-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .weather-card .card-header {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 700;
+            border-radius: 20px 20px 0 0 !important;
+            padding: 20px 30px;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .current-weather {
+            background: linear-gradient(135deg, var(--primary-color), #7209b7);
+            color: white;
+            border-radius: 25px;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .current-weather:hover {
+            transform: translateY(-15px) rotateX(5deg);
+        }
+        
+        .weather-icon-large {
+            font-size: 6rem;
+            color: var(--warning-color);
+            filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3));
+            transition: all 0.5s ease;
+        }
+        
+        .current-weather:hover .weather-icon-large {
+            transform: rotate(10deg) scale(1.1);
+            filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.4));
+        }
+        
+        .temperature {
+            font-size: 4.2rem;
+            font-weight: 900;
+            line-height: 1;
+            text-shadow: 3px 5px 8px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+        
+        .current-weather:hover .temperature {
+            text-shadow: 4px 7px 12px rgba(0, 0, 0, 0.35);
+        }
+        
+        .weather-detail-item {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 18px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+        }
+        
+        .weather-detail-item:hover {
+            transform: translateY(-5px) translateZ(10px);
+            background: rgba(255, 255, 255, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Forecast Cards dengan Hover Effect */
+        .forecast-card {
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 20px;
+            background-color: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .forecast-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+        
+        .forecast-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .forecast-card:hover {
+            background-color: #f8f9ff;
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .forecast-card .day {
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .forecast-card:hover .day {
+            color: var(--secondary-color);
+            transform: scale(1.1);
+        }
+        
+        .forecast-card .weather-icon {
+            font-size: 3.2rem;
+            margin: 20px 0;
+            color: var(--primary-color);
+            transition: all 0.5s ease;
+        }
+        
+        .forecast-card:hover .weather-icon {
+            transform: rotate(15deg) scale(1.2);
+            color: var(--accent-color);
+        }
+        
+        .forecast-card .temp {
+            font-weight: 900;
+            font-size: 1.9rem;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+        }
+        
+        .forecast-card:hover .temp {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        /* Map Styling dengan Hover Effect */
+        #weatherMap {
+            height: 500px;
+            border-radius: 25px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            border: 2px solid white;
+            transition: all 0.5s ease;
+        }
+        
+        #weatherMap:hover {
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+        
+        /* Section Styling dengan Parallax Effect */
+        .section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #f8faff;
+        }
+        
+        /* Efek parallax untuk section tertentu */
+        .section.with-parallax {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #forecast {
+            background: linear-gradient(rgba(248, 250, 255, 0.9), rgba(248, 250, 255, 0.9)), 
+                        url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            text-align: center;
+            font-weight: 800;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .section-title:hover {
+            transform: translateY(-3px);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 6px;
+            transition: all 0.5s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 180px;
+        }
+        
+        /* Today's Weather Details dengan Hover Effect */
+        .today-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .detail-card {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .detail-card:hover {
+            transform: translateY(-10px) translateZ(20px);
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .detail-card i {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--warning-color);
+            transition: all 0.5s ease;
+        }
+        
+        .detail-card:hover i {
+            transform: rotate(15deg) scale(1.2);
+            color: #ff9e00;
+        }
+        
+        .detail-card .value {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .detail-card:hover .value {
+            transform: scale(1.1);
+        }
+        
+        /* Map Layer Buttons dengan Hover Effect */
+        .layer-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 12px !important;
+            padding: 12px 20px !important;
+            font-weight: 600;
+        }
+        
+        .layer-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .layer-btn:hover::before {
+            left: 100%;
+        }
+        
+        .layer-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            color: white !important;
+            border-color: var(--primary-color) !important;
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4) !important;
+            transform: translateY(-3px);
+        }
+        
+        .layer-btn:hover:not(.active) {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+        }
+        
+        .layer-btn i {
+            transition: transform 0.5s ease;
+        }
+        
+        .layer-btn:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section {
+                padding: 120px 0 70px;
+                border-radius: 0 0 25px 25px;
+                background-attachment: scroll; /* Nonaktifkan parallax di mobile */
+            }
+            
+            .temperature {
+                font-size: 3rem;
+            }
+            
+            .weather-icon-large {
+                font-size: 4.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .today-details-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            #forecast {
+                background-attachment: scroll; /* Nonaktifkan parallax di mobile */
+            }
+        }
+        
+        /* Loading Spinner dengan Animation */
+        .spinner-container {
+            display: none;
+            text-align: center;
+            padding: 60px;
+        }
+        
+        .spinner-border {
+            width: 4rem;
+            height: 4rem;
+            border-width: 0.3em;
+            animation: spinner-grow 1.5s linear infinite;
+        }
+        
+        @keyframes spinner-grow {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.5;
+            }
+        }
+        
+        /* Notification dengan Animation */
+        .notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            max-width: 380px;
+            border-left: 5px solid var(--success-color);
+            animation: slideInRight 0.5s ease, fadeOut 0.5s ease 4.5s forwards;
+            transform-origin: right;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+        }
+        
+        /* Temperature Toggle dengan Hover Effect */
+        .temp-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            padding: 8px;
+            width: fit-content;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .temp-toggle-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .temp-toggle-btn {
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            border: none;
+            background: transparent;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .temp-toggle-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .temp-toggle-btn.active {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+        
+        /* Quick Action Buttons dengan Hover Effect */
+        .quick-action-btn {
+            border-radius: 15px;
+            padding: 12px 25px;
+            font-weight: 700;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin: 0 8px 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quick-action-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+        
+        .quick-action-btn:hover::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        .quick-action-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .quick-action-btn i {
+            transition: transform 0.5s ease;
+        }
+        
+        .quick-action-btn:hover i {
+            transform: rotate(15deg) scale(1.2);
+        }
+        
+        /* Weather Alert dengan Animation */
+        .weather-alert {
+            background: linear-gradient(90deg, #ffd166, #ff9e00);
+            color: #333;
+            border-radius: 15px;
+            padding: 20px 25px;
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 8px 25px rgba(255, 157, 0, 0.3);
+            animation: pulse 2s infinite;
+            transition: all 0.4s ease;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 8px 25px rgba(255, 157, 0, 0.3);
+            }
+            50% {
+                box-shadow: 0 8px 30px rgba(255, 157, 0, 0.5);
+            }
+            100% {
+                box-shadow: 0 8px 25px rgba(255, 157, 0, 0.3);
+            }
+        }
+        
+        .weather-alert:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(255, 157, 0, 0.4);
+        }
+        
+        /* Hourly Forecast dengan Hover Effect */
+        .hourly-container {
+            overflow-x: auto;
+            padding: 20px 0;
+            margin-top: 25px;
+            scrollbar-width: thin;
+        }
+        
+        .hourly-scroll {
+            display: flex;
+            gap: 20px;
+            padding: 15px 10px;
+        }
+        
+        .hour-item {
+            min-width: 100px;
+            text-align: center;
+            padding: 20px 15px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
+        
+        .hour-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+        
+        .hour-item .time {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .hour-item:hover .time {
+            color: var(--warning-color);
+        }
+        
+        .hour-item .temp {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hour-item:hover .temp {
+            transform: scale(1.1);
+        }
+        
+        /* Footer dengan Hover Effect */
+        .footer {
+            background: linear-gradient(135deg, var(--dark-color), #000);
+            color: white;
+            padding: 80px 0 40px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .footer h5 {
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+        
+        .footer h5:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+            transition: all 0.4s ease;
+            padding: 5px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
+            transition: left 0.5s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 10px;
+        }
+        
+        .footer-links a:hover::after {
+            left: 0;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 48px;
+            margin-right: 15px;
+            color: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        .social-icons a:hover::before {
+            left: 100%;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(67, 97, 238, 0.4);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 25px;
+            margin-top: 50px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Progress Scroll Indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            z-index: 9999;
+            transition: width 0.2s ease;
+        }
+        
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(67, 97, 238, 0.4);
+            z-index: 999;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .fab:hover {
+            transform: translateY(-10px) rotate(15deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(67, 97, 238, 0.6);
+        }
+        
+        /* Highlight Card dengan Hover Effect */
+        .highlight-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(76, 201, 240, 0.05));
+            transform: translateY(100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .highlight-card:hover::before {
+            transform: translateY(0);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .highlight-title {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight-card:hover .highlight-title {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+        
+        .highlight-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight-card:hover .highlight-value {
+            transform: scale(1.05);
+        }
+        
+        /* Map Controls dengan Hover Effect */
+        .map-controls {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .map-controls:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .map-controls .btn {
+            border-radius: 10px;
+            padding: 10px 15px;
+            transition: all 0.4s ease;
+        }
+        
+        .map-controls .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Guide Steps dengan Hover Effect */
+        .guide-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+        }
+        
+        .guide-step:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .guide-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            font-weight: 800;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 1.3rem;
+            transition: all 0.5s ease;
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+        }
+        
+        .guide-step:hover .guide-number {
+            transform: rotate(15deg) scale(1.1);
+            background: var(--accent-color);
+            box-shadow: 0 12px 30px rgba(76, 201, 240, 0.4);
+        }
