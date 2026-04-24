@@ -1,0 +1,1185 @@
+/* Navbar Styling */
+.navbar.bg-dark {
+    background-color: #20202e !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.bg-dark.scrolled {
+    background-color: #16213e !important;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.02);
+}
+
+.navbar-brand img {
+    transition: all 0.3s ease;
+    margin-right: 8px;
+}
+
+.navbar-brand:hover img {
+    transform: rotate(10deg);
+}
+
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    transition: all 0.3s ease;
+    visibility: hidden;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before {
+    width: 80%;
+    visibility: visible;
+}
+
+.nav-link:hover {
+    color: #f8f9fa !important;
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    font-weight: 600;
+    background-color: transparent !important;
+}
+
+.navbar-toggler {
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-item {
+        margin-bottom: 0.5rem;
+    }
+    
+    .nav-link::before {
+        display: none;
+    }
+}
+
+/* section hero */
+.section-hero {
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: rgba(73, 73, 73, 0.7);
+    padding-top: 80px;
+}
+
+.section-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.section-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.section-hero h1 {
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.section-hero p {
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-hero .btn {
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    opacity: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+}
+
+.section-hero .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.section-hero .btn:hover::before {
+    left: 100%;
+}
+
+.section-hero .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.section-hero img {
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+    transition: all 0.5s ease;
+}
+
+.section-hero img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.4));
+}
+
+/* Animasi untuk text highlight */
+.text-warning {
+    position: relative;
+    display: inline-block;
+}
+
+.text-warning::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.text-warning:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Efek tombol outline */
+.btn-outline-light {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Rating stars animation */
+.bi-star-fill {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .section-hero {
+        text-align: center;
+        background-attachment: scroll;
+    }
+    
+    .section-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .section-hero img {
+        max-width: 300px !important;
+        margin-bottom: 30px;
+    }
+    
+    .section-hero .btn {
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-hero p {
+        font-size: 1rem !important;
+    }
+}
+/* end section hero */
+
+/* tentang batik */
+.section-about {
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.badge.bg-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5D78E 100%);
+  color: #5C4033;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  box-shadow: 0 4px 8px rgba(212, 175, 55, 0.2);
+}
+
+.section-about h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+.section-about h2 .text-primary {
+  color: #5C4033 !important;
+}
+
+.divider {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, #D4AF37, #5C4033);
+  opacity: 0.7;
+}
+
+.batik-motif-overlay {
+  position: relative;
+  z-index: 1;
+}
+
+.batik-motif-overlay img {
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.batik-motif-overlay:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+.batik-facts li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.batik-facts li i {
+  font-size: 1.2rem;
+  margin-top: 2px;
+}
+
+.btn-outline-dark {
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-dark:hover {
+  background-color: #5C4033;
+  color: white !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-about h2 {
+    font-size: 2.2rem;
+  }
+  
+  .batik-motif-overlay {
+    margin-bottom: 30px;
+  }
+}
+/* end tentang batik */
+
+/* tentang kami  batik semar */
+.about-section {
+    padding: 5rem 0;
+    background-color: #faf8f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Brand Header */
+.brand-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.brand-logo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+}
+
+.logo-watermark {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, rgba(138,90,68,0.1) 0%, rgba(250,248,245,0) 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.brand-title {
+    text-align: center;
+}
+
+.pre-title {
+    display: block;
+    font-size: 1rem;
+    color: #b78d65;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #2c1810;
+    margin: 0;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.main-title span {
+    color: #b78d65;
+    position: relative;
+}
+
+.main-title span::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(183,141,101,0.2);
+    z-index: -1;
+}
+
+.title-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.divider-line {
+    width: 60px;
+    height: 1px;
+    background-color: #d4b78f;
+}
+
+.divider-canting {
+    margin: 0 1rem;
+    color: #b78d65;
+}
+
+/* About Content */
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #5a4d3e;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.lead-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(183,141,101,0) 0%, #b78d65 50%, rgba(183,141,101,0) 100%);
+}
+
+/* Highlight Cards */
+.highlight-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.highlight-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(138,90,68,0.1);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, #f3e9dd, #e8d5bc);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #b78d65;
+}
+
+.highlight-card h3 {
+    font-size: 1.25rem;
+    color: #2c1810;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.highlight-card p {
+    color: #6b5a4a;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* CTA Button */
+.about-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #b78d65, #8a5a44);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(138,90,68,0.2);
+}
+
+.cta-button svg {
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(138,90,68,0.3);
+}
+
+.cta-button:hover svg {
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .lead-text {
+        font-size: 1.1rem;
+    }
+    
+    .highlight-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .pre-title {
+        font-size: 0.9rem;
+    }
+    
+    .brand-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .logo-watermark {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* end tentang kami batik semar */
+
+/* produk */
+  .product-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+  }
+  
+  .product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .btn-wishlist {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.9);
+    color: #666;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-wishlist:hover {
+    color: #dc3545;
+    background: white;
+  }
+  
+  .color-options a {
+    transition: transform 0.2s ease;
+  }
+  
+  .color-options a:hover {
+    transform: scale(1.2);
+  }
+  
+  .page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  .page-link {
+    color: #0d6efd;
+  }
+/* end produk */
+
+/* keunggulan */
+/* Features Section Styling */
+.features-section {
+    padding: 6rem 0;
+    background-color: #faf8f5;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-subtitle {
+    display: block;
+    font-size: 1rem;
+    color: #b78d65;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c1810;
+    margin-bottom: 1.5rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background-color: #d4b78f;
+}
+
+.divider-icon {
+    margin: 0 15px;
+    color: #b78d65;
+    display: flex;
+    align-items: center;
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.03);
+    z-index: 1;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #b78d65, #8a5a44);
+    transition: height 0.3s ease;
+    z-index: -1;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(138,90,68,0.1);
+}
+
+.feature-card:hover::before {
+    height: 100%;
+}
+
+.feature-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.feature-icon-bg {
+    position: absolute;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-bg {
+    transform: scale(0);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #b78d65;
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    color: white;
+    transform: scale(1.1);
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    color: #2c1810;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-title {
+    color: white;
+}
+
+.feature-desc {
+    color: #6b5a4a;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.feature-card:hover .feature-desc {
+    color: rgba(255,255,255,0.9);
+}
+
+.feature-hover-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+
+.feature-card:hover .feature-hover-content {
+    max-height: 200px;
+}
+
+.feature-hover-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.feature-hover-content li {
+    color: white;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.2);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.feature-hover-content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* USP Banner */
+.usp-banner {
+    max-width: 800px;
+    margin: 4rem auto 0;
+    background: linear-gradient(135deg, #8a5a44, #b78d65);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(138,90,68,0.2);
+}
+
+.usp-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.usp-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.usp-content h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.usp-content p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        padding: 4rem 0;
+    }
+    
+    .usp-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1.5rem;
+    }
+}
+/* end keunggulan */
+
+/* testimoni */
+#testimoni {
+    background-color: #f8f9fa;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+#testimoni h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+    display: inline-block; /* biar garis menempel rapi */
+}
+
+#testimoni h2::after {
+    content: '';
+    position: absolute;
+    width: 50%; /* panjang garis bisa atur sesuka */
+    height: 4px;
+    background: linear-gradient(90deg, #e74c3c, #f39c12);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+
+#testimoni .card {
+    border: none;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+    position: relative;
+}
+
+#testimoni .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+#testimoni .card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 5rem;
+    color: rgba(231, 76, 60, 0.1);
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+#testimoni .card-body {
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+#testimoni .card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 20px;
+}
+
+#testimoni .card-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #e74c3c, #f39c12);
+    border-radius: 2px;
+}
+
+#testimoni .card-title {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    #testimoni .card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #testimoni h2 {
+        font-size: 2rem;
+    }
+    
+    #testimoni .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #testimoni {
+        padding: 3rem 0;
+    }
+    
+    #testimoni h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    
+    #testimoni .card-text {
+        font-size: 1rem;
+    }
+}
+
+/* Section FAQ */
+#faq {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+#faq h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+#faq h2::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Accordion */
+.accordion-item {
+  border: none;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.accordion-item:hover {
+  transform: translateY(-3px);
+}
+
+.accordion-button {
+  background: #ffffff;
+  font-weight: 600;
+  color: #2c3e50;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background: linear-gradient(90deg, #e74c3c, #f39c12);
+  color: #fff;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+.accordion-body {
+  background: #ffffff;
+  padding: 1.25rem;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  border-top: 1px solid #eee;
+}
+/* end FAQ */
+
+/* kontak */
+  #kontak-maps {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #kontak-maps .card {
+    transition: all 0.3s ease;
+    border: none;
+    background: rgba(255,255,255,0.95);
+  }
+  
+  #kontak-maps .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+  }
+  
+  #kontak-maps .btn-success {
+    background-color: #25D366;
+    border-color: #25D366;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #kontak-maps .btn-success:hover {
+    background-color: #128C7E;
+    border-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(37, 211, 102, 0.2);
+  }
+  
+  #kontak-maps .btn-success::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.2);
+    transform: rotate(30deg);
+    transition: all 0.3s ease;
+  }
+  
+  #kontak-maps .btn-success:hover::after {
+    left: 100%;
+  }
+  
+  #kontak-maps .rounded-4 {
+    border-radius: 1rem !important;
+  }
+/* end kontak */
